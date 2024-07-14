@@ -1,0 +1,53 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    margin: 0 10%;
+}
+.bg-success{
+    background-color: green;
+
+}
+.bg-success h1{
+    color: #fff;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+}
+.card{
+    border: 1px solid grey;
+    margin-top: 2rem;
+    padding: 12px;
+}
+
+.form-inline{
+    padding: 3px;
+    margin-bottom: 2rem;
+}
+.form-inline input[type="text"], .form-inline input[type="submit"]{
+    padding: 8px;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid grey;
+}
+.form-inline input[type="submit"]{
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+ul li{
+    border: 1px solid grey;
+    padding: 0.9rem 8px;
+}
+ul li:nth-child(odd):not(:last-child){
+    border-bottom: none;
+}
