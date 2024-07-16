@@ -102,18 +102,21 @@
 // MOUSE ACTIONS
 
 const runEvent = (e) =>{
+    e.preventDefault()
+    console.log(e);
     // console.log(`Event type is:${e.type}`);
     // let ouput = document.getElementById("output")
     // ouput.innerHTML = `<h1>MouseY:${e.offsetY} MouseX${e.offsetX} </h1>`
     // ouput.style.backgroundColor="rgb("+e.offsetX+", "+e.offsetY+", 40)"
 
 //    document.getElementById("output").innerHTML = e.target.value
-console.log(e.type);
+    console.log(e.target.value);
 
 
 }
 let inputDate = document.querySelector("input[type='text']");
 let form = document.querySelector("#form");
+let select = document.querySelector("select")
 
 // let mouseEvents = document.getElementById("btnClick");
 // mouseEvents.addEventListener("click", runEvent);
@@ -126,11 +129,14 @@ let form = document.querySelector("#form");
 // mouseEvents.addEventListener("mouseleave", runEvent);
 // mouseEvents.addEventListener("mousemove", runEvent);
 // inputDate.addEventListener("keydown", runEvent);
-inputDate.addEventListener("focus", runEvent)
-inputDate.addEventListener("blur", runEvent)
-inputDate.addEventListener("cut", runEvent);
-inputDate.addEventListener("copy", runEvent)
-inputDate.addEventListener("paste", runEvent)
-
+// inputDate.addEventListener("focus", runEvent)
+// inputDate.addEventListener("blur", runEvent)
+// inputDate.addEventListener("cut", runEvent);
+// inputDate.addEventListener("copy", runEvent)
+// inputDate.addEventListener("paste", runEvent)
+// inputDate.addEventListener("input", runEvent)
+// select.addEventListener("change", runEvent)
+// inputDate.addEventListener("click", runEvent)
+form.addEventListener("submit", runEvent)
 
 
