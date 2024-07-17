@@ -139,6 +139,8 @@
 // inputDate.addEventListener("click", runEvent)
 // form.addEventListener("submit", runEvent)
 
+// BUILT WITH VANILA JAVASCRIPT
+
 
 // ITEM LISTER PROJECT
 
@@ -190,7 +192,7 @@ const filterItem=(e)=>{
     
     // get list
     let items = itemList.getElementsByTagName("li")
-    console.log(items);
+    // console.log(items);
 
     // convert to an array
     Array.from(items).forEach((item)=>{
