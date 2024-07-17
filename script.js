@@ -101,22 +101,22 @@
 
 // MOUSE ACTIONS
 
-const runEvent = (e) =>{
-    e.preventDefault()
-    console.log(e);
+// const runEvent = (e) =>{
+//     e.preventDefault()
+//     console.log(e);
     // console.log(`Event type is:${e.type}`);
     // let ouput = document.getElementById("output")
     // ouput.innerHTML = `<h1>MouseY:${e.offsetY} MouseX${e.offsetX} </h1>`
     // ouput.style.backgroundColor="rgb("+e.offsetX+", "+e.offsetY+", 40)"
 
 //    document.getElementById("output").innerHTML = e.target.value
-    console.log(e.target.value);
+//     console.log(e.target.value);
 
 
-}
-let inputDate = document.querySelector("input[type='text']");
-let form = document.querySelector("#form");
-let select = document.querySelector("select")
+// }
+// let inputDate = document.querySelector("input[type='text']");
+// let form = document.querySelector("#form");
+// let select = document.querySelector("select")
 
 // let mouseEvents = document.getElementById("btnClick");
 // mouseEvents.addEventListener("click", runEvent);
@@ -137,6 +137,73 @@ let select = document.querySelector("select")
 // inputDate.addEventListener("input", runEvent)
 // select.addEventListener("change", runEvent)
 // inputDate.addEventListener("click", runEvent)
-form.addEventListener("submit", runEvent)
+// form.addEventListener("submit", runEvent)
 
 
+// ITEM LISTER PROJECT
+
+let form = document.querySelector("#addForm");
+let itemList = document.getElementById("items");
+let filter = document.querySelector("#filter");
+
+const addItem=(e)=>{
+    e.preventDefault();
+    
+    // get input value
+    let newItems = document.getElementById("item").value;
+
+    // create new li element
+    let lists = document.createElement("li");
+    // add className
+    lists.className="list-group-item";
+   
+
+    // add textNode with input value
+    let textNode = document.createTextNode(newItems);
+    lists.appendChild(textNode);
+
+    // add button
+    let deleteBtn = document.createElement("button");
+    deleteBtn.className ="btn btn-danger btn-sm float-right";
+    deleteBtn.appendChild(document.createTextNode("X"))
+    lists.appendChild(deleteBtn);
+
+    itemList.appendChild(lists)
+
+}
+
+// Remove Item
+const removeItem=(e)=>{
+    e.preventDefault();
+    if(e.target.classList.contains("delete")){
+        if(confirm("Are you sure?")){
+            let list = e.target.parentElement;
+            itemList.removeChild(list)
+        }
+    }
+}
+
+// filter items
+
+const filterItem=(e)=>{
+    let text = e.target.value.toLowerCase()
+    
+    // get list
+    let items = itemList.getElementsByTagName("li")
+    console.log(items);
+
+    // convert to an array
+    Array.from(items).forEach((item)=>{
+        let itemName = item.firstChild.textContent;
+        itemName.toLocaleLowerCase().indexOf(text) != -1 ?
+            item.style.display = "block"
+        :
+            item.style.display = "none"
+    })
+}
+
+
+// event listeners
+form.addEventListener("submit", addItem);
+itemList.addEventListener("click", removeItem)
+filter.addEventListener("keyup", filterItem)

@@ -11,26 +11,24 @@
         <div class="container">
             <h1 id="header-title">Item Lister</h1>
         </div>
+        <div class="col-md-6 align-self-center filter">
+            <input type="text" class="form-control" id="filter" placeholder="search items...">
+        </div>
     </header>
     <div class="container">
         <div id="main" class="card card-body">
             <h2 class="title">Add Items</h2>
-            <form class="form-inline mb-3" id="form">
-                <input type="text" class="form-control-mr-2">
-                <select name="" id="">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
+            <form class="form-inline mb-3" id="addForm">
+                <input type="text" class="form-control-mr-2" id="item">
                 <input type="submit" value="Submit" class="btn btn-dark">
             </form>
             <h2 class="title">Items</h2>
             <ul id="items" class="list-group">
-                <li class="list-group-item">Item 1</li>
-                <li class="list-group-item">Item 2</li>
-                <li class="list-group-item">Item 3</li>
-                <li class="list-group-item">Item 4</li>
-                <li class="list-group-item">Item 5</li>
+                <li class="list-group-item">Item 1 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
+                <li class="list-group-item">Item 2 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
+                <li class="list-group-item">Item 3 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
+                <li class="list-group-item">Item 4 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
+                <li class="list-group-item">Item 5 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
             </ul>
             <br>
             <div id="output"></div>

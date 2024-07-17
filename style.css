@@ -7,6 +7,20 @@
 .container{
     margin: 0 10%;
 }
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+header .filter{
+    margin: 0 10%;
+}
+header .filter input[type="text"]{
+    padding: .4rem;
+    outline: none;
+}
+
 .bg-success{
     background-color: green;
 
@@ -16,6 +30,7 @@
     height: 4rem;
     display: flex;
     align-items: center;
+    font-size: 1.5rem;
 }
 .card{
     border: 1px solid grey;
@@ -48,9 +63,20 @@ ul{
 ul li{
     border: 1px solid grey;
     padding: 0.9rem 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 ul li:nth-child(odd):not(:last-child){
     border-bottom: none;
+}
+ul li button{
+    background-color: #f00;
+    border: none;
+    padding: .1rem .2rem;
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
 }
 
 .clickhere{
